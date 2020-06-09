@@ -4,6 +4,9 @@ const hbs=require('hbs')
 const request=require('request')
 
 const app=express()
+
+const port=process.env.PORT || 4000
+
 const publicDir=path.join(__dirname,'../express-app/public')
 const partialFol=path.join(__dirname,'views/partials')
 
@@ -35,4 +38,4 @@ app.get('/request',(req,res)=>{
     res.render('request')
 })
 
-app.listen(4000,console.log('server is up'))
+app.listen(port,console.log('server is up'+port))
